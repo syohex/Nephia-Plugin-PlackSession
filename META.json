@@ -1,5 +1,5 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "Session Plugin for Nephia",
    "author" : [
       "papix <mail@papix.net>"
    ],
@@ -42,12 +42,17 @@
       },
       "runtime" : {
          "requires" : {
+            "Nephia" : "0.32",
+            "Plack::Builder" : "0",
+            "Plack::Session" : "0",
             "perl" : "5.008005"
          }
       },
       "test" : {
          "requires" : {
-            "Test::More" : "0.98"
+            "Test::More" : "0.98",
+            "Test::Requires" : "0",
+            "Test::WWW::Mechanize::PSGI" : "0"
          }
       }
    },

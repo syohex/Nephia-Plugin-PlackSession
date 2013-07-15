@@ -20,15 +20,38 @@ __END__
 
 =head1 NAME
 
-Nephia::Plugin::PlackSession - It's new $module
+Nephia::Plugin::PlackSession - Session Plugin for Nephia
 
 =head1 SYNOPSIS
 
-    use Nephia::Plugin::PlackSession;
+    # create project
+    % nephia-setup MyApp --flavor=PlackSession
+
+    # app.psgi
+    builder {
+        enable 'Plack::Middleware::Session';
+        MyApp->run( $config );
+    }
+
+    # MyApp.pm
+    package MyApp.pm;
+    use strict;
+    use warnings;
+    use Nephia plugins => qw/
+    	PlackSession
+    /;
+
+    path '/' => sub {
+        session->get($key);
+        session->set($key, $value);
+        session->remove($key);
+        session->keys;
+        session->expire;
+    }
 
 =head1 DESCRIPTION
 
-Nephia::Plugin::PlackSession is ...
+Nephia::Plugin::PlackSession is plugin that provides session management using Plack::Session
 
 =head1 LICENSE
 
@@ -42,4 +65,3 @@ it under the same terms as Perl itself.
 papix E<lt>mail@papix.netE<gt>
 
 =cut
-
