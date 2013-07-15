@@ -1,9 +1,9 @@
 use strict;
 use Test::More;
 
-use_ok $_ for qw(
-    Nephia::Plugin::PlackSession
-);
+use Nephia plugins => qw/ PlackSession /;
+
+ok 1;
 
 done_testing;
 

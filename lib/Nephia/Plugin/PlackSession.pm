@@ -2,10 +2,9 @@ package Nephia::Plugin::PlackSession;
 use 5.008005;
 use strict;
 use warnings;
+use Plack::Session;
 
 our $VERSION = "0.01";
-
-use Plack::Session;
 our @EXPORT = qw/ session /;
 
 sub session (@){
