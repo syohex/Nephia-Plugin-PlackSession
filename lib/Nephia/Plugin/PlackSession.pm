@@ -6,10 +6,15 @@ use Plack::Session;
 
 our $VERSION = "0.01";
 our @EXPORT = qw/ session /;
+our $APP_CLASS;
+
+sub load {
+    my ($class, $app, $opts) = @_;
+    $APP_CLASS = $app;
+}
 
 sub session (@){
-    my $caller = caller;
-    return Plack::Session->new($caller->req->env);
+    return Plack::Session->new($APP_CLASS->req->env);
 }
 
 1;
