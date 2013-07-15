@@ -52,5 +52,16 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/papix/Nephia-Plugin-PlackSession/issues"
+      },
+      "homepage" : "https://github.com/papix/Nephia-Plugin-PlackSession",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/papix/Nephia-Plugin-PlackSession.git",
+         "web" : "https://github.com/papix/Nephia-Plugin-PlackSession"
+      }
+   },
    "version" : "0.01"
 }
