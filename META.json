@@ -42,9 +42,10 @@
       },
       "runtime" : {
          "requires" : {
+            "DBI" : "0",
             "Nephia" : "0.32",
             "Plack::Builder" : "0",
-            "Plack::Session" : "0",
+            "Plack::Middleware::Session" : "0",
             "perl" : "5.008005"
          }
       },
