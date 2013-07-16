@@ -4,7 +4,6 @@ use warnings;
 
 sub required_modules {
     'Nephia::Plugin::PlackSession' => '0',
-    'Plack::Middleware::Session'   => '0',
 }
 
 1;

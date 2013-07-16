@@ -1,6 +1,6 @@
 requires 'perl', '5.008001';
 requires 'Nephia', '0.32';
-requires 'Plack::Session';
+requires 'Plack::Middleware::Session';
 requires 'Plack::Builder';
 
 on 'test' => sub {
