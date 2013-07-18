@@ -6,20 +6,10 @@ use Plack::Session;
 
 our $VERSION = "0.01";
 our @EXPORT = qw/ session /;
-our $APP_CLASS;
 
-sub load {
-    my ($class, $app, $opts) = @_;
-    $APP_CLASS = $app;
-}
-
-sub session (@) {
-    my ($class, $req) = @_;
-
-    $req ||= $APP_CLASS->req;
-    my $env = $req->env;
-
-    return Plack::Session->new($env);
+sub session {
+    my $req = context('req');
+    return Plack::Session->new($req->env);
 }
 
 1;
@@ -46,9 +36,9 @@ Nephia::Plugin::PlackSession - Session Plugin for Nephia
     package MyApp.pm;
     use strict;
     use warnings;
-    use Nephia plugins => qw/
-    	PlackSession
-    /;
+    use Nephia plugins => qw[
+        'PlackSession'
+    ];
 
     path '/' => sub {
         session->get($key);
