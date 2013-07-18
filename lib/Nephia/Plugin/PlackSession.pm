@@ -13,8 +13,13 @@ sub load {
     $APP_CLASS = $app;
 }
 
-sub session (@){
-    return Plack::Session->new($APP_CLASS->req->env);
+sub session (@) {
+    my ($class, $req) = @_;
+
+    $req ||= $APP_CLASS->req;
+    my $env = $req->env;
+
+    return Plack::Session->new($env);
 }
 
 1;
