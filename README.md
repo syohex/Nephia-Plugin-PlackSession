@@ -17,9 +17,9 @@ Nephia::Plugin::PlackSession - Session Plugin for Nephia
     package MyApp.pm;
     use strict;
     use warnings;
-    use Nephia plugins => qw/
-    	PlackSession
-    /;
+    use Nephia plugins => [
+        'PlackSession'
+    ];
 
     path '/' => sub {
         session->get($key);
@@ -32,6 +32,14 @@ Nephia::Plugin::PlackSession - Session Plugin for Nephia
 # DESCRIPTION
 
 Nephia::Plugin::PlackSession is plugin that provides session management using Plack::Session
+
+# SEE ALSO
+
+[Nephia](http://search.cpan.org/perldoc?Nephia)
+
+[Plack::Session](http://search.cpan.org/perldoc?Plack::Session)
+
+[Amon2::Plugin::Web::PlackSession](http://search.cpan.org/perldoc?Amon2::Plugin::Web::PlackSession)
 
 # LICENSE
 

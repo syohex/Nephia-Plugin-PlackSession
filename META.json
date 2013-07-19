@@ -51,6 +51,8 @@
       },
       "test" : {
          "requires" : {
+            "Capture::Tiny" : "0",
+            "Guard" : "0",
             "Test::More" : "0.98",
             "Test::Requires" : "0",
             "Test::WWW::Mechanize::PSGI" : "0"
