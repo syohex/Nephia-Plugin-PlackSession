@@ -8,8 +8,15 @@ our $VERSION = "0.01";
 our @EXPORT = qw/ session /;
 
 sub session {
-    my $req = context('req');
-    return Plack::Session->new($req->env);
+    my $session = context('session');
+    if (defined $session) {
+        return $session;
+    } else {
+        my $req = context('req');
+        $session = Plack::Session->new($req->env);
+        context(session => $session);
+        return $session;
+    }
 }
 
 1;
